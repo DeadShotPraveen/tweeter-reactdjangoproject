@@ -74,10 +74,13 @@
                         alert("An error occured.Please try again")
                     }
                 }else{
-                    alert("Another error occured. Please try again")
+                    alert("An error occured.Please try again")
                 }
+            } else if(xhr.status === 401){
+                alert("you must login!")   
+                window.location.href = "/login" 
             } else if(xhr.status === 500){
-                alert("there was a server error, please try again.")    
+                alert("Server error..try again later")    
             }
         }    
         xhr.onerror = function() {
@@ -101,7 +104,7 @@
         xhr.open(method,url)
         xhr.onload = function() {
             const serverResponse = xhr.response
-            var listItems = serverResponse.response
+            var listItems = serverResponse
             var finalTweetStr = ""
             var i;
             for(i=0; i<listItems.length; i++){
