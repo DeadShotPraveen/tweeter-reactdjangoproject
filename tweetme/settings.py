@@ -27,7 +27,7 @@ SECRET_KEY = '$d26l6c-db2tbr+td2l)0w#kwvafqns1u&rsd#!81o41ub!0_e'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1', '.cfe.sh','localhost']
-ALLOWED_HOSTS = ['tweetmeapp.heroku.app']
+ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com']
 LOGIN_URL = "/login"
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ["like","unlike","retweet"]
@@ -140,6 +140,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,"static-root")
 
+
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r'^/api/.*$'
 
@@ -158,7 +159,6 @@ if DEBUG:
     ]
 
 REST_FRAMEWORK = {
-    
     'DEFAULT_AUTHENTICATION_CLASSES': DEFAULT_AUTHENTICATION_CLASSES,
     'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES
 }
