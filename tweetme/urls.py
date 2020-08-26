@@ -23,10 +23,11 @@ urlpatterns = [
     path('login/', login_view),
     path('logout/', logout_view),
     path('register/', register_view),
-    path('<int:tweet_id>', tweets_detail_view),
+    path('<int:tweet_id>', tweets_detail_view),s
     re_path(r'profiles?/', include('profiles.urls')),
     path('api/tweets/', include('tweets.api.urls')),
     re_path(r'api/profiles?/', include('profiles.api.urls')),
+    re_path('.*',TemplateView.as_view(template_name='index.html'))
 ]
 
 if settings.DEBUG:
