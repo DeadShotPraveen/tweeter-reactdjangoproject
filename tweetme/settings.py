@@ -27,7 +27,6 @@ SECRET_KEY = '$d26l6c-db2tbr+td2l)0w#kwvafqns1u&rsd#!81o41ub!0_e'
 DEBUG = False
 
 ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com','127.0.0.1','localhost']
-# ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com']
 LOGIN_URL = "/login"
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ["like","unlike","retweet"]
@@ -130,13 +129,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManiFestStaticFilesStorage'
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static-root")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_URLS_REGEX = r'^/api/.*$'
