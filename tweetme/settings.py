@@ -129,7 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManiFestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManiFestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 
