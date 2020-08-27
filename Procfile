@@ -1,1 +1,1 @@
-web: gunicorn tweetme.wsgi --logfile -
+web: gunicorn tweetme.wsgi
