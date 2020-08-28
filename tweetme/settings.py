@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '$d26l6c-db2tbr+td2l)0w#kwvafqns1u&rsd#!81o41ub!0_e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com','localhost']
 LOGIN_URL = "/login"

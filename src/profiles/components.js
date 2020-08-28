@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 export function UserLink (props) {
   const {username} = props
   const handleUserLink = (event) => {
