@@ -1,1 +1,2 @@
-web: gunicorn tweetme.wsgi
+release: python manage.py migrate
+web: gunicorn tweetme.wsgi --log--file -
