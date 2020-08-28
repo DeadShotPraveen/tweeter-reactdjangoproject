@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>TweetME</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div  class='d-none' id="tweetme-2-feed" ></div>
+    <div  class='d-none'  id='tweet-container'></div>
+    <div class='tweetme-2-profile-badge' data-username="shakt"></div>
+  
+    <div class='d-none' id="tweetme-2" data-username="shakt" data-can-tweet="false"></div>
+
+    <script>
+      var path = window.location.pathname
+      var idRegex = /(?<tweetid>\d+)/
+      var match = path.match(idRegex)
+      if (match) {
+        var tweetId = match.groups.tweetid
+        var tweeme2El = document.getElementById("tweetme-2")
+        tweeme2El.className = 'd-none'
+        var tweetEl = "<div class='tweetme-2-detail' data-tweet-id=" + tweetId + " data-class-name='col-6 mx-auto'></div>"
+        var mainContainer = document.getElementById("tweet-container")
+        mainContainer.innerHTML = tweetEl
+      }
+      
+    </script>
+  </body>
+</html>

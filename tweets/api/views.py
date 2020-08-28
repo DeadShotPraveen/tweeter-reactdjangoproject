@@ -100,7 +100,7 @@ def tweet_feed_view(request, *args, **kwargs):
 @api_view(['GET'])
 def tweet_list_view(request, *args, **kwargs):
     qs = Tweet.objects.all()
-    username = request.GET.get('username') # ?username=Justin
+    username = request.GET.get('username') 
     if username != None:
         qs = qs.by_username(username)
     return get_paginated_queryset_response(qs, request)

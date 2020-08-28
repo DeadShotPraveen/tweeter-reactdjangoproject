@@ -24,6 +24,7 @@ class PublicProfileSerializer(serializers.ModelSerializer):
         ]
     
     def get_is_following(self, obj):
+        # request???
         is_following = False
         context = self.context
         request = context.get("request")
