@@ -19,8 +19,7 @@ from ..serializers import (
 
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 
-@api_view(['POST']) # http method the client == POST
-# @authentication_classes([SessionAuthentication, MyCustomAuth])
+@api_view(['POST']) 
 @permission_classes([IsAuthenticated]) # REST API course
 def tweet_create_view(request, *args, **kwargs):
     serializer = TweetCreateSerializer(data=request.data)
@@ -54,10 +53,6 @@ def tweet_delete_view(request, tweet_id, *args, **kwargs):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def tweet_action_view(request, *args, **kwargs):
-    '''
-    id is required.
-    Action options are: like, unlike, retweet
-    '''
     serializer = TweetActionSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
         data = serializer.validated_data
@@ -141,11 +136,6 @@ def tweet_create_view_pure_django(request, *args, **kwargs):
 
 
 def tweet_list_view_pure_django(request, *args, **kwargs):
-    """
-    REST API VIEW
-    Consume by JavaScript or Swift/Java/iOS/Andriod
-    return json data
-    """
     qs = Tweet.objects.all()
     tweets_list = [x.serialize() for x in qs]
     data = {
@@ -156,11 +146,6 @@ def tweet_list_view_pure_django(request, *args, **kwargs):
 
 
 def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
-    """
-    REST API VIEW
-    Consume by JavaScript or Swift/Java/iOS/Andriod
-    return json data
-    """
     data = {
         "id": tweet_id,
     }
@@ -171,4 +156,4 @@ def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
     except:
         data['message'] = "Not found"
         status = 404
-    return JsonResponse(data, status=status) # json.dumps content_type='application/json'
+    return JsonResponse(data, status=status)

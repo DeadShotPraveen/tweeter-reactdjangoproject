@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {ProfileBadgeComponent} from './profiles'
-import {FeedComponent, TweetsComponent, TweetDetailComponent} from './tweets'
+import {ProfileBadgeComponent} from './profiles/badge'
+import {FeedComponent, TweetsComponent, TweetDetailComponent} from './tweets/components'
 import * as serviceWorker from './serviceWorker';
 
 const appEl = document.getElementById('root')

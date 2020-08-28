@@ -1,7 +1,5 @@
 import React, {useEffect, useState}  from 'react'
-
 import {apiTweetList} from './lookup'
-
 import {Tweet} from './detail'
 
 export function TweetsList(props) {
@@ -40,6 +38,7 @@ export function TweetsList(props) {
       updateFinalTweets.unshift(tweets)
       setTweets(updateFinalTweets)
     }
+    
     const handleLoadNext = (event) => {
       event.preventDefault()
       if (nextUrl !== null) {

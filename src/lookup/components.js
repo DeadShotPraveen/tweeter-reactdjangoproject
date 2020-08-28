@@ -48,4 +48,3 @@ export function backendLookup(method, endpoint, callback, data) {
   }
   xhr.send(jsonData)
 }
-

@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
-
 import {UserDisplay, UserPicture} from './components'
 import {apiProfileDetail, apiProfileFollowToggle} from './lookup'
-
 import {DisplayCount} from './utils'
 
 function ProfileBadge(props) {
@@ -46,10 +44,10 @@ export function ProfileBadgeComponent (props) {
 
     const handleNewFollow = (actionVerb) => {
         apiProfileFollowToggle(username, actionVerb, (response, status)=>{
-            // console.log(response, status)
+
             if (status===200) {
                 setProfile(response)
-                // apiProfileDetail(username, handleBackendLookup)
+
             }
             setProfileLoading(false)
         })

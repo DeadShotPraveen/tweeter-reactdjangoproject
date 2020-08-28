@@ -1,7 +1,5 @@
 import React, {useEffect, useState}  from 'react'
-
 import {apiTweetFeed} from './lookup'
-
 import {Tweet} from './detail'
 
 export function FeedList(props) {
@@ -38,6 +36,7 @@ export function FeedList(props) {
       updateFinalTweets.unshift(tweets)
       setTweets(updateFinalTweets)
     }
+    
     const handleLoadNext = (event) => {
       event.preventDefault()
       if (nextUrl !== null) {
@@ -63,5 +62,3 @@ export function FeedList(props) {
     {nextUrl !== null && <button onClick={handleLoadNext} className='btn btn-outline-primary'>Load next</button>}
     </React.Fragment>
   }
-
-
