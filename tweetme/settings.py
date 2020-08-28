@@ -26,7 +26,7 @@ SECRET_KEY = '$d26l6c-db2tbr+td2l)0w#kwvafqns1u&rsd#!81o41ub!0_e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com''localhost','127.0.0.1']
+ALLOWED_HOSTS = ['tweetmeapp.herokuapp.com','localhost','127.0.0.1']
 LOGIN_URL = "/login"
 MAX_TWEET_LENGTH = 240
 TWEET_ACTION_OPTIONS = ["like","unlike","retweet"]
