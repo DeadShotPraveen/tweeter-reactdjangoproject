@@ -16,15 +16,10 @@ class Profile(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     followers = models.ManyToManyField(User, related_name='following', blank=True)
-    """
-    project_obj = Profile.objects.first()
-    project_obj.followers.all() -> All users following this profile
-    user.following.all() -> All user profiles I follow
-    """
+
 def user_did_save(sender, instance, created, *args, **kwargs):
     if created:
         Profile.objects.get_or_create(user=instance)
 
 post_save.connect(user_did_save, sender=User)
 
-# after the user logs in -> verify profile

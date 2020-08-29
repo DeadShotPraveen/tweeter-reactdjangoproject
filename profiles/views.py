@@ -1,6 +1,5 @@
 from django.http import Http404
 from django.shortcuts import render, redirect
-
 from .forms import ProfileForm
 from .models import Profile
 

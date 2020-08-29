@@ -14,5 +14,4 @@ export {
     TweetsComponent,
     TweetDetailComponent,
     TweetsList,
-
 }

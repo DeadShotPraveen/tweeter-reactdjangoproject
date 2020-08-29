@@ -34,6 +34,9 @@ class TweetCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("This tweet is too long")
         return value
 
+    # def get_user(self, obj):
+    #     return obj.user.id
+
 
 class TweetSerializer(serializers.ModelSerializer):
     user = PublicProfileSerializer(source='user.profile', read_only=True)
