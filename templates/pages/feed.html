@@ -3,7 +3,6 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-{% csrf_token %}
     <div id='tweetme-2-feed'></div>
 {% else %}
     <div id='tweetme-2'></div>
